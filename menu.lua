@@ -1,3 +1,4 @@
+--menu.lua
 
 local composer = require( "composer" )
 
@@ -22,6 +23,15 @@ function scene:create( event )
 
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
+
+  local background = display.newImageRect( sceneGroup, "background.png", 1600, 2400 )
+  background.x = display.contentCenterX
+  background.y = -600
+
+  local title = display.newText( "Vai al gioco", display.contentCenterX, display.contentCenterY, native.systemFont, 30)
+  title:setFillColor(0,0,0)
+
+  title:addEventListener("tap", gotoGameSelection)
 
 end
 
